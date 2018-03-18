@@ -174,3 +174,5 @@ df2014['panel_name'] = df2014['respondent'].map(dic2014)
 frames = [df2014, df2015, df2016]
 df = pd.concat(frames)
 df.to_csv('hmda_data.csv')
+
+# df = pd.read_csv('hmda_data.csv')
