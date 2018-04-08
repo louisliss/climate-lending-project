@@ -18,6 +18,7 @@ import pandas as pd
 import numpy as np
 import os
 import matplotlib.pyplot as plt
+from tabulate import tabulate
 %matplotlib inline
 
 os.chdir("Data")
@@ -149,12 +150,19 @@ originatedclimate9in10yrbanks = originatedclimate9in10yrbanks.sort_values(by=['l
 top10amount = originatedclimate9in10yrbanks.head(10)
 print(top10amount)
 
+print(tabulate(top10amount,headers="keys",tablefmt="grid"))  
+
+
+
 ```
 
 Only Bank
 
-panel_name	loan_amount	originations
-0	BOSTON PRIVATE B&TC	1350	1
++----+---------------------+---------------+----------------+
+|    | panel_name          |   loan_amount |   originations |
++====+=====================+===============+================+
+|  0 | BOSTON PRIVATE B&TC |          1350 |              1 |
++----+---------------------+---------------+----------------+
 
 //////////////////////////////////////////////////////////////////////////////
 
