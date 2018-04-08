@@ -150,7 +150,7 @@ originatedclimate9in10yrbanks = originatedclimate9in10yrbanks.sort_values(by=['l
 top10amount = originatedclimate9in10yrbanks.head(10)
 print(top10amount)
 
-print(tabulate(top10amount,headers="keys",tablefmt="grid"))  
+print(tabulate(top10amount,headers="keys",tablefmt="html"))   
 
 
 
@@ -158,11 +158,14 @@ print(tabulate(top10amount,headers="keys",tablefmt="grid"))
 
 Only Bank
 
-+----+---------------------+---------------+----------------+
-|    | panel_name          |   loan_amount |   originations |
-+====+=====================+===============+================+
-|  0 | BOSTON PRIVATE B&TC |          1350 |              1 |
-+----+---------------------+---------------+----------------+
+<table>
+<thead>
+<tr><th style="text-align: right;">  </th><th>panel_name         </th><th style="text-align: right;">  loan_amount</th><th style="text-align: right;">  originations</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;"> 0</td><td>BOSTON PRIVATE B&TC</td><td style="text-align: right;">         1350</td><td style="text-align: right;">             1</td></tr>
+</tbody>
+</table>
 
 //////////////////////////////////////////////////////////////////////////////
 
