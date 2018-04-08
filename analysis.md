@@ -78,42 +78,54 @@ bosoriginations = pd.merge(df, df2, on='panel_name',how='left')
 
 bosoriginations = bosoriginations.sort_values(by=['originations'],ascending=False)
 top10orig = bosoriginations.head(10)
-print(top10orig)
+print(tabulate(top10orig,headers="keys",tablefmt="html"))   
 
 #top 10 by amount
 
 bosoriginations = bosoriginations.sort_values(by=['loan_amount'],ascending=False)
 top10amount = bosoriginations.head(10)
-print(top10amount)
+print(tabulate(top10amount,headers="keys",tablefmt="html"))
 
 ```
 Top 10 by number of Originations:
 
-panel_name  loan_amount  originations
-532            QUICKEN LOANS, INC.      1679597          5955
-357                  LOANDEPOT.COM      1938749          5837
-641                  UNION YES FCU      2302502          5700
-289           GUARANTEED RATE INC.      1960483          5599
-48                 BANK OF AMER NA      1921483          4222
-676              WELLS FARGO BK NA      2093657          4089
-546  RESIDENTIAL MORTGAGE SERVICES      1136229          3769
-568                SANTANDER BK NA      1239706          3654
-190                     EASTERN BK       899979          3092
-211     FAIRWAY INDP MORTGAGE CORP       988207          2993
+<table>
+<thead>
+<tr><th style="text-align: right;">   </th><th>panel_name                   </th><th style="text-align: right;">  loan_amount</th><th style="text-align: right;">  originations</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;">532</td><td>QUICKEN LOANS, INC.          </td><td style="text-align: right;">      1679597</td><td style="text-align: right;">          5955</td></tr>
+<tr><td style="text-align: right;">357</td><td>LOANDEPOT.COM                </td><td style="text-align: right;">      1938749</td><td style="text-align: right;">          5837</td></tr>
+<tr><td style="text-align: right;">641</td><td>UNION YES FCU                </td><td style="text-align: right;">      2302502</td><td style="text-align: right;">          5700</td></tr>
+<tr><td style="text-align: right;">289</td><td>GUARANTEED RATE INC.         </td><td style="text-align: right;">      1960483</td><td style="text-align: right;">          5599</td></tr>
+<tr><td style="text-align: right;"> 48</td><td>BANK OF AMER NA              </td><td style="text-align: right;">      1921483</td><td style="text-align: right;">          4222</td></tr>
+<tr><td style="text-align: right;">676</td><td>WELLS FARGO BK NA            </td><td style="text-align: right;">      2093657</td><td style="text-align: right;">          4089</td></tr>
+<tr><td style="text-align: right;">546</td><td>RESIDENTIAL MORTGAGE SERVICES</td><td style="text-align: right;">      1136229</td><td style="text-align: right;">          3769</td></tr>
+<tr><td style="text-align: right;">568</td><td>SANTANDER BK NA              </td><td style="text-align: right;">      1239706</td><td style="text-align: right;">          3654</td></tr>
+<tr><td style="text-align: right;">190</td><td>EASTERN BK                   </td><td style="text-align: right;">       899979</td><td style="text-align: right;">          3092</td></tr>
+<tr><td style="text-align: right;">211</td><td>FAIRWAY INDP MORTGAGE CORP   </td><td style="text-align: right;">       988207</td><td style="text-align: right;">          2993</td></tr>
+</tbody>
+</table>
 
 Top 10 by amount of debt ($000s):
 
-panel_name  loan_amount  originations
-641                  UNION YES FCU      2302502          5700
-676              WELLS FARGO BK NA      2093657          4089
-289           GUARANTEED RATE INC.      1960483          5599
-357                  LOANDEPOT.COM      1938749          5837
-48                 BANK OF AMER NA      1921483          4222
-337           JPMORGAN CHASE BK NA      1880435          2866
-251              FIRST REPUBLIC BK      1714343          1934
-532            QUICKEN LOANS, INC.      1679597          5955
-568                SANTANDER BK NA      1239706          3654
-546  RESIDENTIAL MORTGAGE SERVICES      1136229          3769
+<table>
+<thead>
+<tr><th style="text-align: right;">   </th><th>panel_name                   </th><th style="text-align: right;">  loan_amount</th><th style="text-align: right;">  originations</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;">641</td><td>UNION YES FCU                </td><td style="text-align: right;">      2302502</td><td style="text-align: right;">          5700</td></tr>
+<tr><td style="text-align: right;">676</td><td>WELLS FARGO BK NA            </td><td style="text-align: right;">      2093657</td><td style="text-align: right;">          4089</td></tr>
+<tr><td style="text-align: right;">289</td><td>GUARANTEED RATE INC.         </td><td style="text-align: right;">      1960483</td><td style="text-align: right;">          5599</td></tr>
+<tr><td style="text-align: right;">357</td><td>LOANDEPOT.COM                </td><td style="text-align: right;">      1938749</td><td style="text-align: right;">          5837</td></tr>
+<tr><td style="text-align: right;"> 48</td><td>BANK OF AMER NA              </td><td style="text-align: right;">      1921483</td><td style="text-align: right;">          4222</td></tr>
+<tr><td style="text-align: right;">337</td><td>JPMORGAN CHASE BK NA         </td><td style="text-align: right;">      1880435</td><td style="text-align: right;">          2866</td></tr>
+<tr><td style="text-align: right;">251</td><td>FIRST REPUBLIC BK            </td><td style="text-align: right;">      1714343</td><td style="text-align: right;">          1934</td></tr>
+<tr><td style="text-align: right;">532</td><td>QUICKEN LOANS, INC.          </td><td style="text-align: right;">      1679597</td><td style="text-align: right;">          5955</td></tr>
+<tr><td style="text-align: right;">568</td><td>SANTANDER BK NA              </td><td style="text-align: right;">      1239706</td><td style="text-align: right;">          3654</td></tr>
+<tr><td style="text-align: right;">546</td><td>RESIDENTIAL MORTGAGE SERVICES</td><td style="text-align: right;">      1136229</td><td style="text-align: right;">          3769</td></tr>
+</tbody>
+</table>
 
 # Step 4: Look at top Mortgage originators in hi risk tracts
 
