@@ -191,42 +191,56 @@ originatedclimate9in100yrbanks = pd.merge(df, df2, on='panel_name',how='left')
 
 originatedclimate9in100yrbanks = originatedclimate9in100yrbanks.sort_values(by=['originations'],ascending=False)
 top10orig = originatedclimate9in100yrbanks.head(10)
-print(top10orig)
+print(tabulate(top10orig,headers="keys",tablefmt="html"))    
+
 
 #top 10 by amount
 
 originatedclimate9in100yrbanks = originatedclimate9in100yrbanks.sort_values(by=['loan_amount'],ascending=False)
 top10amount = originatedclimate9in100yrbanks.head(10)
-print(top10amount)
+print(tabulate(top10amount,headers="keys",tablefmt="html"))   
+
 
 ```
 Top 10 by Originations
 
-panel_name  loan_amount  originations
-56                MSA MORTGAGE LLC         6980            21
-47                   LOANDEPOT.COM         6422            19
-27              EAST BOSTON SVG BK        19884            18
-73  PRIMELENDING A PLAINSCAPITAL C         5010            15
-43            GUARANTEED RATE INC.         4895            15
-78   RESIDENTIAL MORTGAGE SERVICES         4690            14
-89                   UNION YES FCU         4193            13
-83                 SANTANDER BK NA         2369             9
-33      FAIRWAY INDP MORTGAGE CORP         2823             8
-39               FIRST REPUBLIC BK         4243             8
+<table>
+<thead>
+<tr><th style="text-align: right;">  </th><th>panel_name                    </th><th style="text-align: right;">  loan_amount</th><th style="text-align: right;">  originations</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;">56</td><td>MSA MORTGAGE LLC              </td><td style="text-align: right;">         6980</td><td style="text-align: right;">            21</td></tr>
+<tr><td style="text-align: right;">47</td><td>LOANDEPOT.COM                 </td><td style="text-align: right;">         6422</td><td style="text-align: right;">            19</td></tr>
+<tr><td style="text-align: right;">27</td><td>EAST BOSTON SVG BK            </td><td style="text-align: right;">        19884</td><td style="text-align: right;">            18</td></tr>
+<tr><td style="text-align: right;">73</td><td>PRIMELENDING A PLAINSCAPITAL C</td><td style="text-align: right;">         5010</td><td style="text-align: right;">            15</td></tr>
+<tr><td style="text-align: right;">43</td><td>GUARANTEED RATE INC.          </td><td style="text-align: right;">         4895</td><td style="text-align: right;">            15</td></tr>
+<tr><td style="text-align: right;">78</td><td>RESIDENTIAL MORTGAGE SERVICES </td><td style="text-align: right;">         4690</td><td style="text-align: right;">            14</td></tr>
+<tr><td style="text-align: right;">89</td><td>UNION YES FCU                 </td><td style="text-align: right;">         4193</td><td style="text-align: right;">            13</td></tr>
+<tr><td style="text-align: right;">83</td><td>SANTANDER BK NA               </td><td style="text-align: right;">         2369</td><td style="text-align: right;">             9</td></tr>
+<tr><td style="text-align: right;">39</td><td>FIRST REPUBLIC BK             </td><td style="text-align: right;">         4243</td><td style="text-align: right;">             8</td></tr>
+<tr><td style="text-align: right;">33</td><td>FAIRWAY INDP MORTGAGE CORP    </td><td style="text-align: right;">         2823</td><td style="text-align: right;">             8</td></tr>
+</tbody>
+</table>
 
 Top 10 by Amount
 
-panel_name  loan_amount  originations
-11             BOSTON PRIVATE B&TC        23221             5
-27              EAST BOSTON SVG BK        19884            18
-67                     PEOPLESBANK         7500             1
-56                MSA MORTGAGE LLC         6980            21
-47                   LOANDEPOT.COM         6422            19
-73  PRIMELENDING A PLAINSCAPITAL C         5010            15
-29                      EASTERN BK         4964             4
-43            GUARANTEED RATE INC.         4895            15
-78   RESIDENTIAL MORTGAGE SERVICES         4690            14
-39               FIRST REPUBLIC BK         4243             8
+<table>
+<thead>
+<tr><th style="text-align: right;">  </th><th>panel_name                    </th><th style="text-align: right;">  loan_amount</th><th style="text-align: right;">  originations</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;">11</td><td>BOSTON PRIVATE B&TC           </td><td style="text-align: right;">        23221</td><td style="text-align: right;">             5</td></tr>
+<tr><td style="text-align: right;">27</td><td>EAST BOSTON SVG BK            </td><td style="text-align: right;">        19884</td><td style="text-align: right;">            18</td></tr>
+<tr><td style="text-align: right;">67</td><td>PEOPLESBANK                   </td><td style="text-align: right;">         7500</td><td style="text-align: right;">             1</td></tr>
+<tr><td style="text-align: right;">56</td><td>MSA MORTGAGE LLC              </td><td style="text-align: right;">         6980</td><td style="text-align: right;">            21</td></tr>
+<tr><td style="text-align: right;">47</td><td>LOANDEPOT.COM                 </td><td style="text-align: right;">         6422</td><td style="text-align: right;">            19</td></tr>
+<tr><td style="text-align: right;">73</td><td>PRIMELENDING A PLAINSCAPITAL C</td><td style="text-align: right;">         5010</td><td style="text-align: right;">            15</td></tr>
+<tr><td style="text-align: right;">29</td><td>EASTERN BK                    </td><td style="text-align: right;">         4964</td><td style="text-align: right;">             4</td></tr>
+<tr><td style="text-align: right;">43</td><td>GUARANTEED RATE INC.          </td><td style="text-align: right;">         4895</td><td style="text-align: right;">            15</td></tr>
+<tr><td style="text-align: right;">78</td><td>RESIDENTIAL MORTGAGE SERVICES </td><td style="text-align: right;">         4690</td><td style="text-align: right;">            14</td></tr>
+<tr><td style="text-align: right;">39</td><td>FIRST REPUBLIC BK             </td><td style="text-align: right;">         4243</td><td style="text-align: right;">             8</td></tr>
+</tbody>
+</table>
 
 //////////////////////////////////////////////////////////////////////////////
 
@@ -252,10 +266,126 @@ originatedclimate21in10yrbanks = pd.merge(df, df2, on='panel_name',how='left')
 
 originatedclimate21in10yrbanks = originatedclimate21in10yrbanks.sort_values(by=['originations'],ascending=False)
 top10orig = originatedclimate21in10yrbanks.head(10)
-print(top10orig)
+print(tabulate(top10orig,headers="keys",tablefmt="html"))   
 
 #top 10 by amount
 
 originatedclimate21in10yrbanks = originatedclimate21in10yrbanks.sort_values(by=['loan_amount'],ascending=False)
 top10amount = originatedclimate21in10yrbanks.head(10)
-print(top10amount)
+print(tabulate(top10amount,headers="keys",tablefmt="html"))   
+
+```
+
+Top 10 by Originations
+
+<table>
+<thead>
+<tr><th style="text-align: right;">  </th><th>panel_name                    </th><th style="text-align: right;">  loan_amount</th><th style="text-align: right;">  originations</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;">56</td><td>MSA MORTGAGE LLC              </td><td style="text-align: right;">         6980</td><td style="text-align: right;">            21</td></tr>
+<tr><td style="text-align: right;">47</td><td>LOANDEPOT.COM                 </td><td style="text-align: right;">         6422</td><td style="text-align: right;">            19</td></tr>
+<tr><td style="text-align: right;">27</td><td>EAST BOSTON SVG BK            </td><td style="text-align: right;">        19884</td><td style="text-align: right;">            18</td></tr>
+<tr><td style="text-align: right;">73</td><td>PRIMELENDING A PLAINSCAPITAL C</td><td style="text-align: right;">         5010</td><td style="text-align: right;">            15</td></tr>
+<tr><td style="text-align: right;">43</td><td>GUARANTEED RATE INC.          </td><td style="text-align: right;">         4895</td><td style="text-align: right;">            15</td></tr>
+<tr><td style="text-align: right;">78</td><td>RESIDENTIAL MORTGAGE SERVICES </td><td style="text-align: right;">         4690</td><td style="text-align: right;">            14</td></tr>
+<tr><td style="text-align: right;">89</td><td>UNION YES FCU                 </td><td style="text-align: right;">         4193</td><td style="text-align: right;">            13</td></tr>
+<tr><td style="text-align: right;">83</td><td>SANTANDER BK NA               </td><td style="text-align: right;">         2369</td><td style="text-align: right;">             9</td></tr>
+<tr><td style="text-align: right;">33</td><td>FAIRWAY INDP MORTGAGE CORP    </td><td style="text-align: right;">         2823</td><td style="text-align: right;">             8</td></tr>
+<tr><td style="text-align: right;">39</td><td>FIRST REPUBLIC BK             </td><td style="text-align: right;">         4243</td><td style="text-align: right;">             8</td></tr>
+</tbody>
+</table>
+
+Top 10 by Amount
+
+<table>
+<thead>
+<tr><th style="text-align: right;">  </th><th>panel_name                    </th><th style="text-align: right;">  loan_amount</th><th style="text-align: right;">  originations</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;">11</td><td>BOSTON PRIVATE B&TC           </td><td style="text-align: right;">        23221</td><td style="text-align: right;">             5</td></tr>
+<tr><td style="text-align: right;">27</td><td>EAST BOSTON SVG BK            </td><td style="text-align: right;">        19884</td><td style="text-align: right;">            18</td></tr>
+<tr><td style="text-align: right;">67</td><td>PEOPLESBANK                   </td><td style="text-align: right;">         7500</td><td style="text-align: right;">             1</td></tr>
+<tr><td style="text-align: right;">56</td><td>MSA MORTGAGE LLC              </td><td style="text-align: right;">         6980</td><td style="text-align: right;">            21</td></tr>
+<tr><td style="text-align: right;">47</td><td>LOANDEPOT.COM                 </td><td style="text-align: right;">         6422</td><td style="text-align: right;">            19</td></tr>
+<tr><td style="text-align: right;">73</td><td>PRIMELENDING A PLAINSCAPITAL C</td><td style="text-align: right;">         5010</td><td style="text-align: right;">            15</td></tr>
+<tr><td style="text-align: right;">29</td><td>EASTERN BK                    </td><td style="text-align: right;">         4964</td><td style="text-align: right;">             4</td></tr>
+<tr><td style="text-align: right;">43</td><td>GUARANTEED RATE INC.          </td><td style="text-align: right;">         4895</td><td style="text-align: right;">            15</td></tr>
+<tr><td style="text-align: right;">78</td><td>RESIDENTIAL MORTGAGE SERVICES </td><td style="text-align: right;">         4690</td><td style="text-align: right;">            14</td></tr>
+<tr><td style="text-align: right;">39</td><td>FIRST REPUBLIC BK             </td><td style="text-align: right;">         4243</td><td style="text-align: right;">             8</td></tr>
+</tbody>
+</table>
+
+//////////////////////////////////////////////////////////////////////////////
+
+21 Inches of SLR, 100-Year Flood
+
+```python
+
+originatedclimate21in100yr = originatedclimate[originatedclimate['21in100yrhirisk'] == 1]
+
+
+#tons more! up to thousands now.
+originatedclimate21in100yr.shape
+
+df = originatedclimate21in100yr.groupby('panel_name').sum().reset_index()
+df = df[['panel_name','loan_amount']]
+
+df2 = pd.DataFrame(originatedclimate21in100yr['panel_name'].value_counts().reset_index())
+df2 = df2.rename(columns={'index':'panel_name','panel_name':'originations'})
+
+originatedclimate21in100yrbanks = pd.merge(df, df2, on='panel_name',how='left')
+
+#top 10 by originations
+
+originatedclimate21in100yrbanks = originatedclimate21in100yrbanks.sort_values(by=['originations'],ascending=False)
+top10orig = originatedclimate21in100yrbanks.head(10)
+print(tabulate(top10orig,headers="keys",tablefmt="html"))   
+
+#top 10 by amount
+
+originatedclimate21in100yrbanks = originatedclimate21in100yrbanks.sort_values(by=['loan_amount'],ascending=False)
+top10amount = originatedclimate21in100yrbanks.head(10)
+print(tabulate(top10amount,headers="keys",tablefmt="html"))  
+
+```
+
+Top 10 by Originations
+
+<table>
+<thead>
+<tr><th style="text-align: right;">   </th><th>panel_name                </th><th style="text-align: right;">  loan_amount</th><th style="text-align: right;">  originations</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;">107</td><td>GUARANTEED RATE INC.      </td><td style="text-align: right;">        66734</td><td style="text-align: right;">           179</td></tr>
+<tr><td style="text-align: right;">240</td><td>UNION YES FCU             </td><td style="text-align: right;">        57602</td><td style="text-align: right;">           151</td></tr>
+<tr><td style="text-align: right;">131</td><td>LOANDEPOT.COM             </td><td style="text-align: right;">        42994</td><td style="text-align: right;">           119</td></tr>
+<tr><td style="text-align: right;">259</td><td>WELLS FARGO BK NA         </td><td style="text-align: right;">        66448</td><td style="text-align: right;">           118</td></tr>
+<tr><td style="text-align: right;"> 96</td><td>FIRST REPUBLIC BK         </td><td style="text-align: right;">        87101</td><td style="text-align: right;">           115</td></tr>
+<tr><td style="text-align: right;"> 15</td><td>BANK OF AMER NA           </td><td style="text-align: right;">        55138</td><td style="text-align: right;">            98</td></tr>
+<tr><td style="text-align: right;">202</td><td>PROSPECT MORTGAGE, LLC    </td><td style="text-align: right;">        34808</td><td style="text-align: right;">            96</td></tr>
+<tr><td style="text-align: right;"> 84</td><td>FAIRWAY INDP MORTGAGE CORP</td><td style="text-align: right;">        26717</td><td style="text-align: right;">            78</td></tr>
+<tr><td style="text-align: right;">155</td><td>MSA MORTGAGE LLC          </td><td style="text-align: right;">        25407</td><td style="text-align: right;">            66</td></tr>
+<tr><td style="text-align: right;">217</td><td>SANTANDER BK NA           </td><td style="text-align: right;">        19859</td><td style="text-align: right;">            56</td></tr>
+</tbody>
+</table>
+
+Top 10 by Amount
+
+<table>
+<thead>
+<tr><th style="text-align: right;">   </th><th>panel_name              </th><th style="text-align: right;">  loan_amount</th><th style="text-align: right;">  originations</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;"> 96</td><td>FIRST REPUBLIC BK       </td><td style="text-align: right;">        87101</td><td style="text-align: right;">           115</td></tr>
+<tr><td style="text-align: right;">125</td><td>JPMORGAN CHASE BK NA    </td><td style="text-align: right;">        67068</td><td style="text-align: right;">            44</td></tr>
+<tr><td style="text-align: right;">107</td><td>GUARANTEED RATE INC.    </td><td style="text-align: right;">        66734</td><td style="text-align: right;">           179</td></tr>
+<tr><td style="text-align: right;">259</td><td>WELLS FARGO BK NA       </td><td style="text-align: right;">        66448</td><td style="text-align: right;">           118</td></tr>
+<tr><td style="text-align: right;"> 29</td><td>BOSTON PRIVATE B&TC     </td><td style="text-align: right;">        63948</td><td style="text-align: right;">            46</td></tr>
+<tr><td style="text-align: right;">240</td><td>UNION YES FCU           </td><td style="text-align: right;">        57602</td><td style="text-align: right;">           151</td></tr>
+<tr><td style="text-align: right;"> 15</td><td>BANK OF AMER NA         </td><td style="text-align: right;">        55138</td><td style="text-align: right;">            98</td></tr>
+<tr><td style="text-align: right;"> 69</td><td>EAST BOSTON SVG BK      </td><td style="text-align: right;">        53956</td><td style="text-align: right;">            48</td></tr>
+<tr><td style="text-align: right;"> 68</td><td>EAST BOSTON SAVINGS BANK</td><td style="text-align: right;">        43068</td><td style="text-align: right;">            21</td></tr>
+<tr><td style="text-align: right;">131</td><td>LOANDEPOT.COM           </td><td style="text-align: right;">        42994</td><td style="text-align: right;">           119</td></tr>
+</tbody>
+</table>
