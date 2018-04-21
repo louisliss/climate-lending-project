@@ -1,4 +1,4 @@
-# 21in100yr Second/Third Analysis of HMDA Data
+# Second/Third Analysis of HMDA Data
 
 Our goals:
 
