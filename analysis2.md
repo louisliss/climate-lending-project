@@ -23,7 +23,7 @@ os.chdir("Data")
 
 climate = pd.read_csv("climateriskbytract.csv", index_col=0)
 
-classification = lambda x: 1 if x >= 0.50 else 0
+classification = lambda x: 1 if x >= 0.25 else 0
 
 climate['9in10yrhirisk'] = climate['9in10yr'].apply(classification)
 climate['9in100yrhirisk'] = climate['9in100yr'].apply(classification)
@@ -104,7 +104,6 @@ twentyonein100yr = originatedclimate.groupby(['21in100yrhirisk']).sum().reset_in
 
 twentyonein100yr = twentyonein100yr.at[1,'loan_amount']
 
-denom
 
 citywidedebtbyrisk = {'Risk':['ninein10yr','ninein100yr','twentyonein10yr','twentyonein100yr','total'],'Amount': [ninein10yr,ninein100yr,twentyonein10yr,twentyonein100yr,denom]}
 
