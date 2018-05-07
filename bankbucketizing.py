@@ -27,5 +27,18 @@ df2 = df2.rename(columns={'index':'panel_name','panel_name':'originations'})
 
 bosoriginations = pd.merge(df, df2, on='panel_name',how='left')
 
+def banksize (x):
+    if x >= 510220:
+        return 1
+    elif x <= 31465:
+        return 3
+    else:
+        return 2
+
+bosoriginations['banksize'] = bosoriginations['loan_amount'].apply(lambda x: banksize(x))
+
+bosoriginations[bosoriginations['banksize'] == 1].head()
+
+
 
 bosoriginations.to_csv('bosoriginations.csv')
