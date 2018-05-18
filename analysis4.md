@@ -113,19 +113,14 @@ The code below starts with the originated climate dataframe and creates the top 
 
 ```python
 
-
-originatedclimate.head()
 originatedclimatetract = originatedclimate.groupby(['census_tract_number','panel_name'],as_index=False).sum()
-
-originatedclimate.shape
-originatedclimatetract.shape
-
 originatedclimatetract = originatedclimatetract[['census_tract_number','panel_name','loan_amount']]
-
 originatedclimatetract['rank'] = originatedclimatetract.groupby('census_tract_number')['loan_amount'].rank(ascending=False)
-
 originatedclimatetract = originatedclimatetract.sort_values(by=['census_tract_number','rank'])
-
 originatedclimatetract = originatedclimatetract[originatedclimatetract['rank'] < 11]
+
+#export
+
+originatedclimatetract.to_csv('originatedclimatetract.csv')
 
 ```
