@@ -4,6 +4,7 @@ Our goals(cumulative):
 
 1. Shave down the HMDA data to just Boston tracts; existing data includes several North Shore cities and towns.
 2. Create a CSV with all banks originating mortgages in Boston, with columns for Total Amount originated in the city, and then Amounts Originated for each risk level.
+3. Create a CSV with a row for each tract and columns for top 10 lenders by total debt
 
 ## Step 1
 
@@ -103,5 +104,28 @@ bosoriginationsv2 = merge4.copy()
 
 #export
 bosoriginationsv2.to_csv('bosoriginationsv2.csv')
+
+```
+
+##Step 3
+
+The code below starts with the originated climate dataframe and creates the top 10 banks for each tract
+
+```python
+
+
+originatedclimate.head()
+originatedclimatetract = originatedclimate.groupby(['census_tract_number','panel_name'],as_index=False).sum()
+
+originatedclimate.shape
+originatedclimatetract.shape
+
+originatedclimatetract = originatedclimatetract[['census_tract_number','panel_name','loan_amount']]
+
+originatedclimatetract['rank'] = originatedclimatetract.groupby('census_tract_number')['loan_amount'].rank(ascending=False)
+
+originatedclimatetract = originatedclimatetract.sort_values(by=['census_tract_number','rank'])
+
+originatedclimatetract = originatedclimatetract[originatedclimatetract['rank'] < 11]
 
 ```
