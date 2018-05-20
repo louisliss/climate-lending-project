@@ -4,7 +4,7 @@ Our goals(cumulative):
 
 1. Shave down the HMDA data to just Boston tracts; existing data includes several North Shore cities and towns.
 2. Create a CSV with all banks originating mortgages in Boston, with columns for Total Amount originated in the city, and then Amounts Originated for each risk level.
-3. Create a CSV with a row for each tract and columns for top 10 lenders by total debt
+3. Create a CSV with the top ten lenders in each tract
 
 ## Step 1
 
